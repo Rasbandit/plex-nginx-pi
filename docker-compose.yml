@@ -9,8 +9,8 @@ services:
       - '81:81'
       - '443:443'
     volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
+      - /opt/npm:/data
+      - /opt/letsencrypt:/etc/letsencrypt
 
   adguard-home:
     image: adguard/adguardhome:latest
@@ -23,6 +23,6 @@ services:
       - "3000:3000"
       - "3030:3030"
     volumes:
-      - ./data/adguardhome/work:/opt/adguardhome/work
-      - ./data/adguardhome/conf:/opt/adguardhome/conf
-      - ./data/adguardhome/logs:/opt/adguardhome/logs
+      - /opt/adguardhome/work:/opt/adguardhome/work
+      - /opt/adguardhome/conf:/opt/adguardhome/conf
+      - /opt/adguardhome/logs:/opt/adguardhome/logs
